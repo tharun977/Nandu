@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Endless Love for Nandu</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url('https://i.ibb.co/QQpRY2g/nandu.jpg');
+    }
+
+    #content {
+      text-align: center;
+      z-index: 1;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    #love-quote {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+
+    .love-image {
+      display: none;
+    }
+
+    .love-text {
+      font-size: 1.2rem;
+      margin-top: 20px;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      font-size: 1.2rem;
+      text-align: center;
+      line-height: 1.6;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.5);
+    }
+
+    .love-text p {
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .button {
+      font-size: 1.5rem;
+      text-decoration: none;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: 2px solid #fff;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .button:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    #file-upload {
+      display: none;
+    }
+
+    #upload-label {
+      font-size: 1.5rem;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    #upload-label:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <input type="file" id="file-upload" accept="image/*" onchange="saveImage(event)">
+    <label for="file-upload" id="upload-label">Upload Image</label>
+    <h1>Endless Love for Nandu</h1>
+    <p id="love-quote">Nandu, a whisper on my lips, a song my heart sings true,<br>
+    A name that dances with the stars, the moon I long to pursue.<br>
+    More precious than rubies, more radiant than gold,<br>
+    My soulmate, my Nandu, a story yet untold.</p>
+    <p>Your eyes, Nandu, galaxies swirling deep within,<br>
+    A universe of love where my soul can truly begin.<br>
+    Your laughter, Nandu, a symphony that fills the air,<br>
+    Chasing away shadows, a love beyond compare.</p>
+    <p>Your touch, Nandu, a whisper of fire on my skin,<br>
+    A spark that ignites a passion that burns bright within.<br>
+    With you, Nandu, my fears gently fade away,<br>
+    Replaced by sunshine, a love that lights my every day.</p>
+    <p>In dreams I hold, Nandu, forever whispers your name,<br>
+    A promise etched in starlight, a love's eternal flame.<br>
+    Through life's grand waltz, Nandu, my hand entwined with thine,<br>
+    We'll conquer mountains, forever our destinies entwine.</p>
+    <p>For you are my compass, Nandu, guiding me through the night,<br>
+    My muse, my inspiration, my forever love's guiding light.<br>
+    You are the sun that warms my soul, the moon that lights my way,<br>
+    My Nandu, my soulmate, with you I'll forever stay.</p>
+    <p>With love, Nandunte kichu...</p>
+    <div class="button-container">
+      <a href="https://youtu.be/LKelAJrI3e0?si=Y2sQkTXoNcewTkMw" class="button" target="_blank">Listen to Our Song</a>
+      <!-- Add more buttons here if needed -->
+    </div>
+  </div>
+
+  <script>
+    // Check if image data is stored in local storage
+    window.onload = function() {
+      var imageData = localStorage.getItem('uploadedImage');
+      if (imageData) {
+        document.body.style.backgroundImage = 'url(' + imageData + ')';
+      }
+    };
+
+    function saveImage(event) {
+      var reader = new FileReader();
+      reader.onload = function() {
+        var imageData = reader.result;
+        localStorage.setItem('uploadedImage', imageData);
+        document.body.style.backgroundImage = 'url(' + imageData + ')';
+      }
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  </script>
+</body>
+</html>
